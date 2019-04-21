@@ -13,6 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
     <title>Train Schedule</title>
   </head>
   <body>
@@ -27,7 +28,8 @@
     <!-- Schedule -->
 
     <div class="container">
-      <div class="panel panel-primary">
+      <div class="trainTable">
+        <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title text-left">Current Train Schedule</h3>
         </div>
@@ -92,11 +94,19 @@
                 <td>25</td>
                 <td>05:28 PM</td>
                 <td>3</td>
-              </tr>
+              <!-- </tr>
+              <th scope="row"></th>
+              <td>Boston</td>
+              <td>45</td>
+              <td>05:50 PM</td>
+              <td>25</td>
+            </tr> -->
             </tbody>
           </table>
         </div>
       </div>
+    </div>
+    
     </div>
 
     <!-- Add A Train -->
@@ -121,7 +131,7 @@
               <label for="destination">Destination</label>
               <input type="text" class="form-control" id="destination" />
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label for="firstTrainTime"
                 >First Train Time (HH:MM - Military Time)</label
               >
@@ -130,15 +140,24 @@
             <div class="form-group">
               <label for="frequency">Frequency (Min)</label>
               <input type="text" class="form-control" id="frequency" />
-            </div>
+            </div> -->
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <form class="form-inline">
+              <label for="firstTrainInput">First Train Time</label>
+              <input type="time" class="form-control mx-sm-3 mb-2" name="trTime" id="firstTrainInput" required>
+              <label>Frequency (min)</label>
+              <input type="number" class="form-control mx-sm-3 mb-2" name="trFrequency" id="frequencyInput" placeholder="30">
+              <button id="addTrainBtn" type="submit" class="btn btn-primary">Submit</button>
+
+            <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
           </form>
-        </div>
-      </div>
+      
+    </div>
+  </div>
     </div>
 
     <!-- Scripts -->
+    <script src="app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </body>
